@@ -4,45 +4,46 @@ export default function Home() {
   return (
     <div className="container">
       <Head>
-        <title>Create Next App</title>
+        <title>Oro Tech Talks #2</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main>
         <h1 className="title">
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          Welcome to <a href="https://oroinc.com/">Oro Tech Talks #2!</a>
         </h1>
 
         <p className="description">
-          Get started by editing <code>pages/index.js</code>
+          See the examples of the headless use cases below.<br />
+          Code repository can be found <a className="link" href="https://github.com/dnahrebecki/headless-oro">here</a>
         </p>
 
         <div className="grid">
           <a href="https://nextjs.org/docs" className="card">
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
+            <h3>Landing Page &rarr;</h3>
+            <p>Content Editors use external tool for synchronizing pages to ORO and data is available via LandingPage API for buyers.</p>
           </a>
 
           <a href="https://nextjs.org/learn" className="card">
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
+            <h3>Barcode Scan &rarr;</h3>
+            <p>Grocery shops use barcode scanning app to scan products and automatically purchase them in recurring orders.</p>
           </a>
 
           <a
             href="https://github.com/vercel/next.js/tree/master/examples"
             className="card"
           >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
+            <h3>Profile &rarr;</h3>
+            <p>Buyers are able to view and edit their profiles. We'll learn here how to use the oAuth2 authentication.</p>
           </a>
 
           <a
             href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
             className="card"
           >
-            <h3>Deploy &rarr;</h3>
+            <h3>PageModel &rarr;</h3>
             <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
+              Learn how to facilitate API models to build endpoints exposing all the needed information for a page.
             </p>
           </a>
         </div>
@@ -112,6 +113,17 @@ export default function Home() {
         .title a:active {
           text-decoration: underline;
         }
+        
+        .link {
+          color: #0070f3;
+          text-decoration: none;
+        }
+
+        .link:hover,
+        .link:focus,
+        .link:active {
+          text-decoration: underline;
+        }
 
         .title {
           margin: 0;
@@ -135,7 +147,7 @@ export default function Home() {
           padding: 0.75rem;
           font-size: 1.1rem;
           font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-            DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+          DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
         }
 
         .grid {
