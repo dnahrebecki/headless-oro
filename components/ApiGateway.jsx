@@ -2,8 +2,11 @@ import config from "../config/configuration.json";
 
 class ApiGateway {
   async getToken(username, password) {
-    if (window.localStorage.getItem(config.LOCAL_STORAGE_KEY)) {
-      return window.localStorage.getItem(config.LOCAL_STORAGE_KEY);
+    window.localStorage.setItem(config.LOCAL_STORAGE_KEY_USERNAME, username);
+    const localStorageKey = config.LOCAL_STORAGE_KEY + username;
+
+    if (window.localStorage.getItem(localStorageKey)) {
+      return window.localStorage.getItem(localStorageKey);
     }
 
     const body = JSON.stringify({
@@ -31,14 +34,15 @@ class ApiGateway {
     console.debug(`Token: ${token}`);
 
     if (token) {
-      window.localStorage.setItem(config.LOCAL_STORAGE_KEY, token);
+      window.localStorage.setItem(localStorageKey, token);
     }
 
     return token;
   }
 
   async fetch(endpoint, method = 'GET', body = '') {
-    const token = window.localStorage.getItem(config.LOCAL_STORAGE_KEY);
+    const username = window.localStorage.getItem(config.LOCAL_STORAGE_KEY_USERNAME);
+    const token = window.localStorage.getItem(config.LOCAL_STORAGE_KEY + username);
     if (token === null) {
       throw new Error('Token is not provided. Authenticate first!')
     }
@@ -58,7 +62,13 @@ class ApiGateway {
       options.headers['Content-Type'] = 'application/json';
     }
 
-    return await fetch(url, options);
+    const response =  await fetch(url, options);
+
+    if (response.status === 401) {
+      window.localStorage.removeItem(config.LOCAL_STORAGE_KEY + username);
+    }
+
+    return response;
   }
 
   async get(endpoint) {

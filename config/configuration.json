@@ -3,5 +3,6 @@
   "TOKEN_ENDPOINT": "http://headless-oro.localhost/index_dev.php/oauth2-token",
   "CLIENT_ID": "ljoveTBs_ClRvkkMzBFIUxTVr2LkAmAY",
   "CLIENT_SECRET": "Q5UuwDwXB0GOQ2Qkby1SROny8vD7AVmm1fdhy7UFpO_J0sAUH3HXy6cUBvHsXu9HMiFbJkvyClslMVT9HazwG5",
-  "LOCAL_STORAGE_KEY": "api-token"
+  "LOCAL_STORAGE_KEY": "api-token",
+  "LOCAL_STORAGE_KEY_USERNAME": "api-username"
 }
