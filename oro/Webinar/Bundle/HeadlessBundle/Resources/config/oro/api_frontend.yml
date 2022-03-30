@@ -1,0 +1,29 @@
+api:
+    entity_aliases:
+        Webinar\Bundle\HeadlessBundle\Model\Profile:
+            alias: profile
+            plural_alias: profile
+    entities:
+        Webinar\Bundle\HeadlessBundle\Model\Profile:
+            fields:
+                ordersRevenue:
+                    data_type: float
+                ordersNumber:
+                    data_type: integer
+                productsNumber:
+                    data_type: integer
+                userId:
+                    data_type: integer
+                userFirstName:
+                    data_type: string
+                userLastName:
+                    data_type: string
+                userEmail:
+                    data_type: string
+                userCustomerName:
+                    data_type: string
+            actions:
+                get_list: true
+                delete: false
+                create: false
+                update: false

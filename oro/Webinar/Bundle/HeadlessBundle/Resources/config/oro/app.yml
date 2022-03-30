@@ -1,0 +1,17 @@
+oro_frontend:
+    routes_to_expose: ['oro_.*']
+    frontend_api:
+        cors:
+            allow_origins:
+                - 'http://localhost:3000'
+oro_api:
+    cors:
+        allow_origins:
+            - 'http://localhost:3000'
+
+oro_oauth2_server:
+    authorization_server:
+        access_token_lifetime: 36000
+        cors:
+            allow_origins:
+                - 'http://localhost:3000'

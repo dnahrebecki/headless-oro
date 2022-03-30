@@ -1,0 +1,8 @@
+services:
+    Webinar\Bundle\HeadlessBundle\Api\Processor\ProfileData:
+        arguments:
+            - '@oro_entity.doctrine_helper'
+            - '@oro_security.acl_helper'
+            - '@oro_security.token_accessor'
+        tags:
+            - { name: oro.api.processor, action: get_list, group: load_data, class: Webinar\Bundle\HeadlessBundle\Model\Profile }
