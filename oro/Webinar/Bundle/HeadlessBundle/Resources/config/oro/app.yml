@@ -1,5 +1,4 @@
 oro_frontend:
-    routes_to_expose: ['oro_.*']
     frontend_api:
         cors:
             allow_origins:
