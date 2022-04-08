@@ -1,0 +1,8 @@
+{
+  "BASE_API_URL": "https://oro-headless-api.loca.lt",
+  "TOKEN_ENDPOINT": "https://oro-headless-api.loca.lt/oauth2-token",
+  "CLIENT_ID": "ljoveTBs_ClRvkkMzBFIUxTVr2LkAmAY",
+  "CLIENT_SECRET": "Q5UuwDwXB0GOQ2Qkby1SROny8vD7AVmm1fdhy7UFpO_J0sAUH3HXy6cUBvHsXu9HMiFbJkvyClslMVT9HazwG5",
+  "LOCAL_STORAGE_KEY": "api-token",
+  "LOCAL_STORAGE_KEY_USERNAME": "api-username"
+}

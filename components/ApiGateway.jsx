@@ -1,4 +1,5 @@
-import config from "../config/configuration.json";
+import config from "../config/configuration_lt.json";
+// import config from "../config/configuration.json";
 
 class ApiGateway {
   async getToken(username, password) {

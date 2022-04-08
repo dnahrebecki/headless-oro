@@ -3,10 +3,12 @@ oro_frontend:
         cors:
             allow_origins:
                 - 'http://localhost:3000'
+                - 'https://oro-headless.loca.lt'
 oro_api:
     cors:
         allow_origins:
             - 'http://localhost:3000'
+            - 'https://oro-headless.loca.lt'
 
 oro_oauth2_server:
     authorization_server:
@@ -14,3 +16,4 @@ oro_oauth2_server:
         cors:
             allow_origins:
                 - 'http://localhost:3000'
+                - 'https://oro-headless.loca.lt'
