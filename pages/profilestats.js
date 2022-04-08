@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import * as React from "react";
 import ApiGateway from "../components/ApiGateway";
+import ProfileView from "../components/pages/ProfileView";
 
 export default function ProfileStats() {
     const [profile, setProfile] = React.useState({});
@@ -16,28 +17,25 @@ export default function ProfileStats() {
         const loadedData = await apiGateway.get('/api/profile');
 
         if (loadedData && loadedData.data) {
-            console.log(loadedData.data[0].meta)
             setProfile(loadedData.data[0].meta);
         }
     }
 
     return (
         <>
-            <h1>Profile with stats</h1>
             {(profile) ? (
-                <div>
-                    <div><span>ID: </span>{ profile.userId }</div>
-                    <div><span>First name: </span>{ profile.userFirstName }</div>
-                    <div><span>Last name: </span>{ profile.userLastName }</div>
-                    <div><span>Email: </span>{ profile.userEmail }</div>
-                    <div><span>Customer: </span>{ profile.userCustomerName }</div>
-                    <div><span>Orders number: </span>{ profile.ordersNumber }</div>
-                    <div><span>Orders total: </span>{ profile.ordersRevenue }</div>
-                </div>
-            ): ''}
-            <p>
-                <Link href="/"><a>Back to home</a></Link>
-            </p>
+                <ProfileView
+                    profileData={{firstName: profile.userFirstName, lastName: profile.userLastName}}
+                    profileAttr={[
+                        {label: 'First Name', value: profile.userFirstName},
+                        {label: 'Last Name', value: profile.userLastName},
+                        {label: 'Email', value: profile.userEmail},
+                        {label: 'Customer', value: profile.userCustomerName},
+                        {label: 'Orders number', value: profile.ordersNumber},
+                        {label: 'Orders total', value: `$${profile.ordersRevenue}`}
+                    ]}
+                />
+            ) : ''}
         </>
     )
 }
