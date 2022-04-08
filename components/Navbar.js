@@ -4,11 +4,13 @@ export default function Navbar() {
     return (
         <div className="flex justify-between items-center px-4 py-6 sm:px-6 md:justify-start md:space-x-10">
             <div>
-                <img
-                    className="h-8 w-auto sm:h-10"
-                    src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
-                    alt=""
-                />
+                <Link href="/">
+                    <img
+                        className="h-8 w-auto sm:h-10"
+                        src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
+                        alt=""
+                    />
+                </Link>
             </div>
             <div className="hidden md:flex-1 md:flex md:items-center md:justify-between">
                 <div className="flex space-x-10">

@@ -1,8 +1,7 @@
 import {Html5QrcodeScanner} from "html5-qrcode"
 import * as React from "react";
 import ApiGateway from "../components/ApiGateway";
-import config from '../config/configuration.json'
-// import config from '../config/configuration_lt.json'
+import Configuration from '../components/Configuration';
 
 export default function Scanner() {
     const [barcodes, setBarcodes] = React.useState([])
@@ -82,7 +81,7 @@ export default function Scanner() {
                                             className="aspect-w-3 aspect-h-4 bg-gray-200 group-hover:opacity-75 sm:aspect-none sm:h-96">
                                             {product.attributes.images[0] ? (
                                                 <img
-                                                    src={`${config.BASE_API_URL}${product.attributes.images[0].url}`}
+                                                    src={`${Configuration().BASE_API_URL}${product.attributes.images[0].url}`}
                                                     alt={product.attributes.name}
                                                     className="w-full h-full object-center object-cover sm:w-full sm:h-full"
                                                 />

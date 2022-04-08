@@ -1,10 +1,9 @@
-// import config from "../config/configuration_lt.json";
-import config from "../config/configuration.json";
+import Configuration from "./Configuration";
 
 class ApiGateway {
   async getToken(username, password) {
-    window.localStorage.setItem(config.LOCAL_STORAGE_KEY_USERNAME, username);
-    const localStorageKey = config.LOCAL_STORAGE_KEY + username;
+    window.localStorage.setItem(Configuration().LOCAL_STORAGE_KEY_USERNAME, username);
+    const localStorageKey = Configuration().LOCAL_STORAGE_KEY + username;
 
     if (window.localStorage.getItem(localStorageKey)) {
       return window.localStorage.getItem(localStorageKey);
@@ -12,15 +11,15 @@ class ApiGateway {
 
     const body = JSON.stringify({
       grant_type: 'password',
-      client_id: config.CLIENT_ID,
-      client_secret: config.CLIENT_SECRET,
+      client_id: Configuration().CLIENT_ID,
+      client_secret: Configuration().CLIENT_SECRET,
       username: username,
       password: password
     });
 
     console.debug(`Fetching token for ${username}`);
 
-    const res = await fetch(config.TOKEN_ENDPOINT, {
+    const res = await fetch(Configuration().TOKEN_ENDPOINT, {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
@@ -42,13 +41,13 @@ class ApiGateway {
   }
 
   async fetch(endpoint, method = 'GET', body = '') {
-    const username = window.localStorage.getItem(config.LOCAL_STORAGE_KEY_USERNAME);
-    const token = window.localStorage.getItem(config.LOCAL_STORAGE_KEY + username);
+    const username = window.localStorage.getItem(Configuration().LOCAL_STORAGE_KEY_USERNAME);
+    const token = window.localStorage.getItem(Configuration().LOCAL_STORAGE_KEY + username);
     if (token === null) {
       throw new Error('Token is not provided. Authenticate first!')
     }
 
-    const url = `${config.BASE_API_URL}${endpoint}`;
+    const url = `${Configuration().BASE_API_URL}${endpoint}`;
     const IsUpdateReq = ['POST', 'PATCH'].includes(method);
     let options = {
       method: method,
@@ -66,7 +65,7 @@ class ApiGateway {
     const response =  await fetch(url, options);
 
     if (response.status === 401) {
-      window.localStorage.removeItem(config.LOCAL_STORAGE_KEY + username);
+      window.localStorage.removeItem(Configuration().LOCAL_STORAGE_KEY + username);
     }
 
     return response;
