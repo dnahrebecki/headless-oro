@@ -1,7 +1,10 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import Configuration from "./../components/Configuration";
 
 export default function Home() {
+  const final = Configuration().FINAL;
+
   return (
     <div className="container">
       <Head>
@@ -20,28 +23,28 @@ export default function Home() {
         </p>
 
         <div className="grid">
-          <Link href="/landingpage">
+          <Link href={final ? '/final/landingpage' : '/landingpage'}>
             <a className="card">
               <h3>Landing Page &rarr;</h3>
               <p>Content Editors use external tool for synchronizing pages to ORO and data is available via LandingPage API for buyers.</p>
             </a>
           </Link>
 
-          <Link href="/scanner">
+          <Link href={final ? '/final/scanner' : '/scanner'}>
             <a className="card">
               <h3>Barcode Scan &rarr;</h3>
               <p>Grocery shops use barcode scanning app to scan products and automatically purchase them in recurring orders.</p>
             </a>
           </Link>
 
-          <Link href="/profile">
+          <Link href={final ? '/final/profile' : '/profile'}>
             <a className="card">
               <h3>Profile &rarr;</h3>
               <p>Buyers are able to view and edit their profiles. We'll learn here how to use the oAuth2 authentication.</p>
             </a>
           </Link>
 
-          <Link href="/profilestats">
+          <Link href={final ? '/final/profilestats' : '/profilestats'}>
             <a className="card">
               <h3>PageModel &rarr;</h3>
               <p>

@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import * as React from "react";
-import ApiGateway from "../components/ApiGateway";
-import ProfileView from "../components/pages/ProfileView";
+import ApiGateway from "../../components/ApiGateway";
+import ProfileView from "../../components/pages/ProfileView";
 
 export default function ProfileStats() {
     const [profile, setProfile] = React.useState({});

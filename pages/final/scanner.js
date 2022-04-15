@@ -1,7 +1,7 @@
 import {Html5QrcodeScanner} from "html5-qrcode"
 import * as React from "react";
-import ApiGateway from "../components/ApiGateway";
-import Configuration from '../components/Configuration';
+import ApiGateway from "../../components/ApiGateway";
+import Configuration from '../../components/Configuration';
 
 export default function Scanner() {
     const [barcodes, setBarcodes] = React.useState([])
