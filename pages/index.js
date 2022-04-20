@@ -1,227 +1,109 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import Configuration from "./../components/Configuration";
+import * as React from "react";
 
 export default function Home() {
-  const final = Configuration().FINAL;
+    const final = Configuration().FINAL;
 
-  return (
-    <div className="container">
-      <Head>
-        <title>Oro Tech Talks #2</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    return (
+        <div className="relative bg-gray-50 pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
+            <div className="absolute inset-0">
+                <div className="bg-white h-1/3 sm:h-2/3"/>
+            </div>
+            <div className="relative max-w-7xl mx-auto">
+                <div className="text-center">
+                    <h1 className="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-5xl">
+                        Welcome to <a className="text-indigo-600" href="https://oroinc.com/">Oro Tech Talks #2!</a>
+                    </h1>
+                    <p className="mt-3 max-w-2xl mx-auto text-xl text-gray-500 sm:mt-4">
+                        See the examples of the headless use cases below.
+                    </p>
+                    <p className="mt-3 max-w-2xl mx-auto text-xl text-gray-500 sm:mt-4">
+                        Code repository can be found <a className="text-indigo-600"
+                                                        href="https://github.com/dnahrebecki/headless-oro">here</a>
+                    </p>
+                </div>
+                <div className="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-4 lg:max-w-none">
+                    <div className="flex flex-col rounded-lg shadow-lg overflow-hidden">
+                        <div className="flex-shrink-0">
+                            <img className="h-48 w-full object-cover"
+                                 src="https://images.unsplash.com/photo-1584824486516-0555a07fc511?w=305&fit=crop" alt="" />
+                        </div>
+                        <div className="flex-1 bg-white p-6 flex flex-col justify-between">
+                            <div className="flex-1">
+                                <Link href={final ? '/final/landingpage' : '/landingpage'}>
+                                    <a className="block mt-2">
+                                        <p className="text-xl font-semibold text-gray-900">Landing Page</p>
+                                        <p className="mt-3 text-base text-gray-500">
+                                            Content Editors use external tool for synchronizing pages to ORO and data is
+                                            available via LandingPage API for buyers.
+                                        </p>
+                                    </a>
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
 
-      <main>
-        <h1 className="title">
-          Welcome to <a href="https://oroinc.com/">Oro Tech Talks #2!</a>
-        </h1>
+                    <div className="flex flex-col rounded-lg shadow-lg overflow-hidden">
+                        <div className="flex-shrink-0">
+                            <img className="h-48 w-full object-cover"
+                                 src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?w=305&fit=crop" alt="" />
+                        </div>
+                        <div className="flex-1 bg-white p-6 flex flex-col justify-between">
+                            <div className="flex-1">
+                                <Link href={final ? '/final/scanner' : '/scanner'}>
+                                    <a className="block mt-2">
+                                        <p className="text-xl font-semibold text-gray-900">Barcode Scan</p>
+                                        <p className="mt-3 text-base text-gray-500">
+                                            Grocery shops use barcode scanning app to scan products and automatically
+                                            purchase them in recurring orders.
+                                        </p>
+                                    </a>
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
 
-        <p className="description">
-          See the examples of the headless use cases below.<br />
-          Code repository can be found <a className="link" href="https://github.com/dnahrebecki/headless-oro">here</a>
-        </p>
+                    <div className="flex flex-col rounded-lg shadow-lg overflow-hidden">
+                        <div className="flex-shrink-0">
+                            <img className="h-48 w-full object-cover"
+                                 src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?crop=focalpoint&fit=crop&fp-y=.25&w=305&h=305" alt="" />
+                        </div>
+                        <div className="flex-1 bg-white p-6 flex flex-col justify-between">
+                            <div className="flex-1">
+                                <Link href={final ? '/final/profile' : '/profile'}>
+                                    <a className="block mt-2">
+                                        <p className="text-xl font-semibold text-gray-900">Profile</p>
+                                        <p className="mt-3 text-base text-gray-500">
+                                            Buyers are able to view and edit their profiles. We'll learn here how to customer user context in API.
+                                        </p>
+                                    </a>
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
 
-        <div className="grid">
-          <Link href={final ? '/final/landingpage' : '/landingpage'}>
-            <a className="card">
-              <h3>Landing Page &rarr;</h3>
-              <p>Content Editors use external tool for synchronizing pages to ORO and data is available via LandingPage API for buyers.</p>
-            </a>
-          </Link>
-
-          <Link href={final ? '/final/scanner' : '/scanner'}>
-            <a className="card">
-              <h3>Barcode Scan &rarr;</h3>
-              <p>Grocery shops use barcode scanning app to scan products and automatically purchase them in recurring orders.</p>
-            </a>
-          </Link>
-
-          <Link href={final ? '/final/profile' : '/profile'}>
-            <a className="card">
-              <h3>Profile &rarr;</h3>
-              <p>Buyers are able to view and edit their profiles. We'll learn here how to use the oAuth2 authentication.</p>
-            </a>
-          </Link>
-
-          <Link href={final ? '/final/profilestats' : '/profilestats'}>
-            <a className="card">
-              <h3>PageModel &rarr;</h3>
-              <p>
-                Learn how to facilitate API models to build endpoints exposing all the needed information for a page.
-              </p>
-            </a>
-          </Link>
+                    <div className="flex flex-col rounded-lg shadow-lg overflow-hidden">
+                        <div className="flex-shrink-0">
+                            <img className="h-48 w-full object-cover"
+                                 src="https://images.unsplash.com/photo-1516542076529-1ea3854896f2?w=305&fit=crop" alt="" />
+                        </div>
+                        <div className="flex-1 bg-white p-6 flex flex-col justify-between">
+                            <div className="flex-1">
+                                <Link href={final ? '/final/profilestats' : '/profilestats'}>
+                                    <a className="block mt-2">
+                                        <p className="text-xl font-semibold text-gray-900">PageModel API</p>
+                                        <p className="mt-3 text-base text-gray-500">
+                                            Learn how to facilitate custom API models to build endpoints exposing all the needed information for a page.
+                                        </p>
+                                    </a>
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </main>
-
-      <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel" className="logo" />
-        </a>
-      </footer>
-
-      <style jsx>{`
-        .container {
-          min-height: 100vh;
-          padding: 0 0.5rem;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-
-        main {
-          padding: 5rem 0;
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-
-        footer {
-          width: 100%;
-          height: 100px;
-          border-top: 1px solid #eaeaea;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        footer img {
-          margin-left: 0.5rem;
-        }
-
-        footer a {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        a {
-          color: inherit;
-          text-decoration: none;
-        }
-
-        .title a {
-          color: #0070f3;
-          text-decoration: none;
-        }
-
-        .title a:hover,
-        .title a:focus,
-        .title a:active {
-          text-decoration: underline;
-        }
-        
-        .link {
-          color: #0070f3;
-          text-decoration: none;
-        }
-
-        .link:hover,
-        .link:focus,
-        .link:active {
-          text-decoration: underline;
-        }
-
-        .title {
-          margin: 0;
-          line-height: 1.15;
-          font-size: 4rem;
-        }
-
-        .title,
-        .description {
-          text-align: center;
-        }
-
-        .description {
-          line-height: 1.5;
-          font-size: 1.5rem;
-        }
-
-        code {
-          background: #fafafa;
-          border-radius: 5px;
-          padding: 0.75rem;
-          font-size: 1.1rem;
-          font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-          DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-        }
-
-        .grid {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-wrap: wrap;
-
-          max-width: 800px;
-          margin-top: 3rem;
-        }
-
-        .card {
-          margin: 1rem;
-          flex-basis: 45%;
-          padding: 1.5rem;
-          text-align: left;
-          color: inherit;
-          text-decoration: none;
-          border: 1px solid #eaeaea;
-          border-radius: 10px;
-          transition: color 0.15s ease, border-color 0.15s ease;
-        }
-
-        .card:hover,
-        .card:focus,
-        .card:active {
-          color: #0070f3;
-          border-color: #0070f3;
-        }
-
-        .card h3 {
-          margin: 0 0 1rem 0;
-          font-size: 1.5rem;
-        }
-
-        .card p {
-          margin: 0;
-          font-size: 1.25rem;
-          line-height: 1.5;
-        }
-
-        .logo {
-          height: 1em;
-        }
-
-        @media (max-width: 600px) {
-          .grid {
-            width: 100%;
-            flex-direction: column;
-          }
-        }
-      `}</style>
-
-      <style jsx global>{`
-        html,
-        body {
-          padding: 0;
-          margin: 0;
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-            sans-serif;
-        }
-
-        * {
-          box-sizing: border-box;
-        }
-      `}</style>
-    </div>
-  )
+    )
 }

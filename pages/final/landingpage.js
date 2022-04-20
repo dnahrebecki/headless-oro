@@ -9,9 +9,16 @@ export default function LandingPages() {
     const [pages, setPages] = React.useState([])
     const apiGateway = new ApiGateway();
     const pageImagesUrl = [
-        'https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
-        'https://images.unsplash.com/photo-1547586696-ea22b4d4235d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
-        'https://images.unsplash.com/photo-1492724441997-5dc865305da7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80'
+        'https://images.unsplash.com/photo-1496128858413-b36217c2ce36?fit=crop&w=500&q=90',
+        'https://images.unsplash.com/photo-1547586696-ea22b4d4235d?fit=crop&w=500&q=90',
+        'https://images.unsplash.com/photo-1492724441997-5dc865305da7?fit=crop&w=500&q=90',
+        'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?fit=crop&w=500&q=90',
+        'https://images.unsplash.com/photo-1515378960530-7c0da6231fb1?fit=crop&w=500&q=90',
+        'https://images.unsplash.com/photo-1519389950473-47ba0277781c?fit=crop&w=500&q=90',
+        'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?fit=crop&w=500&q=90',
+        'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?fit=crop&w=500&q=90',
+        'https://images.unsplash.com/photo-1573164713988-8665fc963095?fit=crop&w=500&q=90',
+        'https://images.unsplash.com/photo-1516251193007-45ef944ab0c6?fit=crop&w=500&q=90',
     ];
 
     React.useEffect(() => {
@@ -41,16 +48,20 @@ export default function LandingPages() {
                     </p>
                 </div>
                 <div className="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
-                    {pages.map((page) => (
-                        <div key={page.id} className="flex flex-col rounded-lg shadow-lg overflow-hidden">
+                    {pages.map((page, index) => (
+                        <div key={index} className="flex flex-col rounded-lg shadow-lg overflow-hidden">
                             <div className="flex-shrink-0">
-                                <img className="h-48 w-full object-cover" src={_.sample(pageImagesUrl)} alt="" />
+                                <img className="h-48 w-full object-cover" src={pageImagesUrl[index] ?? _.sample(pageImagesUrl)} alt="" />
                             </div>
                             <div className="flex-1 bg-white p-6 flex flex-col justify-between">
                                 <div className="flex-1">
                                     <Link href={final ? `/final/landingpage/${page.id}` : `/landingpage/${page.id}`}>
                                         <a className="block mt-2">
                                             <p className="text-xl font-semibold text-gray-900">{page.attributes.title}</p>
+                                            <p className="mt-3 text-base text-gray-500">
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris non purus ac lorem pulvinar consequat.
+                                                Praesent non ornare justo.
+                                            </p>
                                         </a>
                                     </Link>
                                 </div>
