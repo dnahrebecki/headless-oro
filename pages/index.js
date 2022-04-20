@@ -76,7 +76,7 @@ export default function Home() {
                                     <a className="block mt-2">
                                         <p className="text-xl font-semibold text-gray-900">Profile</p>
                                         <p className="mt-3 text-base text-gray-500">
-                                            Buyers are able to view and edit their profiles. We'll learn here how to customer user context in API.
+                                            Buyers are able to view and edit their profiles. We'll learn here how to use customer user context in API.
                                         </p>
                                     </a>
                                 </Link>
