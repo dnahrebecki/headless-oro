@@ -2,9 +2,10 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Configuration from "./../components/Configuration";
 import * as React from "react";
+import {useSolution} from "../contexts/solution";
 
 export default function Home() {
-    const final = Configuration().FINAL;
+    const {finalOn} = useSolution();
 
     return (
         <div className="relative bg-gray-50 pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
@@ -32,7 +33,7 @@ export default function Home() {
                         </div>
                         <div className="flex-1 bg-white p-6 flex flex-col justify-between">
                             <div className="flex-1">
-                                <Link href={final ? '/final/landingpage' : '/landingpage'}>
+                                <Link href={finalOn ? '/final/landingpage' : '/landingpage'}>
                                     <a className="block mt-2">
                                         <p className="text-xl font-semibold text-gray-900">Landing Page</p>
                                         <p className="mt-3 text-base text-gray-500">
@@ -52,7 +53,7 @@ export default function Home() {
                         </div>
                         <div className="flex-1 bg-white p-6 flex flex-col justify-between">
                             <div className="flex-1">
-                                <Link href={final ? '/final/scanner' : '/scanner'}>
+                                <Link href={finalOn ? '/final/scanner' : '/scanner'}>
                                     <a className="block mt-2">
                                         <p className="text-xl font-semibold text-gray-900">Barcode Scan</p>
                                         <p className="mt-3 text-base text-gray-500">
@@ -72,7 +73,7 @@ export default function Home() {
                         </div>
                         <div className="flex-1 bg-white p-6 flex flex-col justify-between">
                             <div className="flex-1">
-                                <Link href={final ? '/final/profile' : '/profile'}>
+                                <Link href={finalOn ? '/final/profile' : '/profile'}>
                                     <a className="block mt-2">
                                         <p className="text-xl font-semibold text-gray-900">Profile</p>
                                         <p className="mt-3 text-base text-gray-500">
@@ -91,7 +92,7 @@ export default function Home() {
                         </div>
                         <div className="flex-1 bg-white p-6 flex flex-col justify-between">
                             <div className="flex-1">
-                                <Link href={final ? '/final/profilestats' : '/profilestats'}>
+                                <Link href={finalOn ? '/final/profilestats' : '/profilestats'}>
                                     <a className="block mt-2">
                                         <p className="text-xl font-semibold text-gray-900">PageModel API</p>
                                         <p className="mt-3 text-base text-gray-500">

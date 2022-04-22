@@ -1,11 +1,14 @@
 import "../styles/global.css"
 import Layout from '../components/Layout'
+import {SolutionSwitcher} from "../contexts/solution";
 
 function MyApp({ Component, pageProps }) {
     return (
-        <Layout>
-            <Component {...pageProps} />
-        </Layout>
+        <SolutionSwitcher>
+            <Layout>
+                <Component {...pageProps} />
+            </Layout>
+        </SolutionSwitcher>
     )
 }
 

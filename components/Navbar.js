@@ -1,6 +1,11 @@
 import Link from 'next/link'
+import {Toggle} from "react-toggle-component";
+import styled from "styled-components";
+import {useSolution} from "../contexts/solution";
 
 export default function Navbar() {
+    const {toggle} = useSolution();
+
     return (
         <div className="flex justify-between items-center px-4 py-6 sm:px-6 md:justify-start md:space-x-10">
             <div>
@@ -19,6 +24,11 @@ export default function Navbar() {
                             Home
                         </a>
                     </Link>
+                </div>
+
+                <div className="flex space-x-10">
+                    <span className="text-gray-500 ">Show solution</span>
+                    <Toggle name="final-switch" onToggle={(e) => {toggle(e.target.checked)}}/>
                 </div>
             </div>
         </div>
