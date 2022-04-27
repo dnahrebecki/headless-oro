@@ -1,0 +1,2 @@
+bundles:
+    - { name: Webinar\Bundle\HeadlessBundle\WebinarHeadlessBundle, priority: 300 }

@@ -1,0 +1,7 @@
+webinar_headless_api_profile:
+    path: '%oro_api.rest.prefix%profile'
+    controller: Oro\Bundle\ApiBundle\Controller\RestApiController::itemWithoutIdAction
+    defaults:
+        entity: profile
+    options:
+        group: rest_api
