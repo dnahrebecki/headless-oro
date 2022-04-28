@@ -28,7 +28,7 @@ This section is about configuring your OroCommerce instance.
 1. Generate public & private keys: https://doc.oroinc.com/bundles/platform/OAuth2ServerBundle/#bundle-docs-platform-oauth2-server-bundle
    - `cd OROCOMMERCE_INSTANCE_DIR/var`
    - `openssl genrsa -out oauth_private.key 2048`
-   - `openssl rsa -in private.key -pubout -out oauth_public.key`
+   - `openssl rsa -in oauth_private.key -pubout -out oauth_public.key`
    - `chmod 644 oauth_private.key oauth_public.key`
 2. Open OroCommerce, go to System -> Storefront oAuth2 Applications
 3. Create **Storefront oAuth2 Application**, Password Grant Type
