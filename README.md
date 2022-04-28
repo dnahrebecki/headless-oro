@@ -40,9 +40,9 @@ This section is about configuring your OroCommerce instance.
 ## Next.js app
 
 1. `cd NEXTJS_DIR`
-1.`npm install`
-2.`npm run dev`
-3. Open `config/configuration.json` and provide your own config:
+2. `npm install`
+3. `npm run dev`
+4. Open `config/configuration.json` and provide your own config:
    - BASE_API_URL - url of your OroCommerce instance
    - CLIENT_ID & CLIENT_SECRET - data from OroCommerce Storefront oAuth2 Application
 
