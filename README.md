@@ -21,7 +21,7 @@ Clone the repository:
 1. `cd NEXTJS_DIR`
 2. `git clone https://github.com/dnahrebecki/headless-oro`
 
-## OroCommerce
+#### OroCommerce
 
 This section is about configuring your OroCommerce instance.
 
@@ -37,7 +37,7 @@ This section is about configuring your OroCommerce instance.
 5. Copy the content of `oro/Webinar/Bundle/HeadlessBundle/Resources/config/oro/app.yml` to the main `config.yml` file or just copy the whole file to any of your existing bundles.
 6. Clear cache (`bin/console cache:clear --env=prod`)
 
-## Next.js app
+#### Next.js app
 
 1. `cd NEXTJS_DIR`
 2. `npm install`
