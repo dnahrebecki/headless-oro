@@ -34,7 +34,7 @@ This section is about configuring your OroCommerce instance.
 3. Create **Storefront oAuth2 Application**, Password Grant Type
    - https://doc.oroinc.com/api/authentication/oauth-password/
 4. Copy client id & client secret
-5. Copy the content of `oro/Webinar/Bundle/HeadlessBundle/Resources/config/oro/app.yml` to the main `config.yml` file or just copy the whole file to any of your existing bundles.
+5. Copy the whole content of `oro/` directory to the `src/` directory of your OroCommerce project
 6. Clear cache (`bin/console cache:clear --env=prod`)
 
 #### Next.js app
